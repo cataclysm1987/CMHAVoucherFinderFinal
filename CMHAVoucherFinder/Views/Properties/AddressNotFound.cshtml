@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "AddressNotFound";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Address Not Found</h2>
+
+<h2>We can't find a valid address from the information you entered. </h2>
+
+@Html.ActionLink("Reenter the Property Information", "Create", "Properties", null, new { @class="btn btn-large" })

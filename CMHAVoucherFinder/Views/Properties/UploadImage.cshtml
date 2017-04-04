@@ -1,0 +1,16 @@
+﻿@using System.Web.Mvc.Html
+@model CMHAVoucherFinder.Models.Property
+
+@using (Html.BeginForm("UploadImageFile", "Properties", FormMethod.Post,
+                                        new { enctype = "multipart/form-data" }))
+{
+    <h2>@Model.StreetAddress</h2>
+    
+    @Html.HiddenFor(x => x.PropertyId)
+    <label for="file">Upload Image:</label>
+    <input type="file" name="file" id="file" style="width: 100%;" />
+    <input type="submit" value="Upload" class="submit" />
+}
+
+<br />
+

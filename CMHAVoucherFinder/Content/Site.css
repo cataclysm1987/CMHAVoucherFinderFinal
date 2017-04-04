@@ -1,0 +1,67 @@
+﻿body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+	max-width: 280px;
+}
+
+#PropertyDescription {
+    width: 100%;
+    height: 350px;
+}
+
+input, select, textarea {
+    max-width: 350px;
+}
+
+
+
+.details-p {
+	line-height: 0;
+    margin-bottom: 3px;
+}
+
+.details-divider {
+    border-style: solid;
+    border-left: thick dotted #ff0000;
+    border-right: thick dotted #ff0000;
+}
+
+hr .details-divider
+
+body > div.container.body-content > div.indoor-values > div.col-md-6.col-sm-12.detils-divider {
+    border-style: solid;
+    border-left: thick dotted #ff0000;
+    border-right: thick dotted #ff0000;
+}
+
+.verticalLine {
+  border-left: thick solid #ff0000;
+    height: 90%;
+}
+
+.detail-header {
+    clear: both;
+}
+
+label, input {
+    display: inline;
+}

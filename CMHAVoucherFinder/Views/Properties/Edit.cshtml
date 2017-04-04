@@ -1,0 +1,143 @@
+﻿@model CMHAVoucherFinder.Models.Property
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.UserId)
+    @Html.HiddenFor(model => model.SquareFeet)
+    @Html.HiddenFor(model => model.CeilingFans)
+    @Html.HiddenFor(model => model.Fireplace)
+    @Html.HiddenFor(model => model.CablePaid)
+    @Html.HiddenFor(model => model.HeatStyle)
+    @Html.HiddenFor(model => model.DishWasher)
+    @Html.HiddenFor(model => model.Stove)
+    @Html.HiddenFor(model => model.GarbageDisposal)
+    @Html.HiddenFor(model => model.Refrigerator)
+    @Html.HiddenFor(model => model.Microwave)
+    @Html.HiddenFor(model => model.SwimmingPool)
+    @Html.HiddenFor(model => model.GatedCommunity)
+    @Html.HiddenFor(model => model.LawnCareIncluded)
+    @Html.HiddenFor(model => model.ParkingType)
+    @Html.HiddenFor(model => model.FencedYard)
+    @Html.HiddenFor(model => model.PatioPorch)
+    @Html.HiddenFor(model => model.IsSmokingAllowed)
+    @Html.HiddenFor(model => model.LotSize)
+    @Html.HiddenFor(model => model.TenantPaysElectric)
+    @Html.HiddenFor(model => model.ElectricStatus)
+    @Html.HiddenFor(model => model.TenantPaysHeat)
+    @Html.HiddenFor(model => model.HeatStatus)
+    @Html.HiddenFor(model => model.TenantPaysSewer)
+    @Html.HiddenFor(model => model.SewerStatus)
+    @Html.HiddenFor(model => model.TenantPaysWater)
+    @Html.HiddenFor(model => model.WaterStatus)
+    @Html.HiddenFor(model => model.IsParkingClose)
+    @Html.HiddenFor(model => model.NoStepEntry)
+    @Html.HiddenFor(model => model.RampedEntry)
+    @Html.HiddenFor(model => model.Doorway32OrWider)
+    @Html.HiddenFor(model => model.AccessiblePathInHome)
+    @Html.HiddenFor(model => model.AutomaticEntryDoor)
+    @Html.HiddenFor(model => model.LeverStyleDoorHandles)
+    @Html.HiddenFor(model => model.SingleLevelOrFirstFloow)
+    @Html.HiddenFor(model => model.InsideSteps)
+    @Html.HiddenFor(model => model.OutsideSteps)
+    @Html.HiddenFor(model => model.Latitude)
+    @Html.HiddenFor(model => model.Longitude)
+    @Html.HiddenFor(model => model.Beds)
+    @Html.HiddenFor(model => model.Baths)
+    @Html.HiddenFor(model=> model.IsPropertyAccessible)
+    @Html.HiddenFor(model => model.PropertyType)
+
+
+
+    <div class="form-horizontal">
+        <h4>Property</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.PropertyId)
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.PropertyName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PropertyName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PropertyName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.PropertyDescription, htmlAttributes: new { @class = "control-label col-md-2", @id = "property-description-area"})
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.PropertyDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PropertyDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StreetAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StreetAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.StreetAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateAvailable, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateAvailable, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateAvailable, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,349 @@
+﻿@model CMHAVoucherFinder.Models.Property
+
+@{
+    ViewBag.Title = "Additional Details";
+}
+
+<h2>Add More Details About Your Property</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.UserId)
+        @Html.HiddenFor(model => model.PropertyId)
+        @Html.HiddenFor(model => model.PropertyName)
+        @Html.HiddenFor(model => model.City)
+        @Html.HiddenFor(model => model.State)
+        @Html.HiddenFor(model => model.PropertyDescription)
+        @Html.HiddenFor(model => model.StreetAddress)
+        @Html.HiddenFor(model => model.DateAvailable)
+        @Html.HiddenFor(model => model.ZipCode)
+        @Html.HiddenFor(model => model.Price)
+        @Html.HiddenFor(model => model.Latitude)
+        @Html.HiddenFor(model => model.Longitude)
+        @Html.HiddenFor(model => model.PropertyType)
+        
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SquareFeet, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SquareFeet, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SquareFeet, "", new { @class = "text-danger" })
+        </div>
+    </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.PropertyType, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.PropertyType, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+    <div class="form-group">
+        @Html.LabelFor(model => model.Beds, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Beds, Model.BedBathList, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Beds, "", new { @class = "text-danger" })
+        </div>
+    </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Baths, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Baths, Model.BedBathList, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Baths, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+    <div class="form-group">
+            @Html.LabelFor(m => m.CeilingFans, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.CeilingFans, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.Furnished, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.Furnished, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.Fireplace, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.Fireplace, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.CablePaid, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.CablePaid, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.HeatStyle, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.HeatStyle, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.DishWasher, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.DishWasher, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.Stove, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.Stove, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.GarbageDisposal, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.GarbageDisposal, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.Refrigerator, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.Refrigerator, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.Microwave, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.Microwave, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.SwimmingPool, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.SwimmingPool, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.GatedCommunity, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.GatedCommunity, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.LawnCareIncluded, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.LawnCareIncluded, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.ParkingType, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.ParkingType, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.FencedYard, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.FencedYard, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.PatioPorch, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.PatioPorch, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.IsSmokingAllowed, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.IsSmokingAllowed, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.LotSize, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LotSize, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LotSize, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.TenantPaysElectric, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.TenantPaysElectric, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.ElectricStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ElectricStatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ElectricStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.TenantPaysHeat, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.TenantPaysHeat, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HeatStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HeatStatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HeatStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.TenantPaysSewer, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.TenantPaysSewer, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SewerStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SewerStatus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SewerStatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+        
+        
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.TenantPaysWater, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.TenantPaysWater, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WaterStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WaterStatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WaterStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+        <!--Accessibility-->
+    <h1>Accessibility Information</h1>
+        <div class="form-group">
+            @Html.LabelFor(m => m.IsPropertyAccessible, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.IsPropertyAccessible, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.IsParkingClose, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.IsParkingClose, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.NoStepEntry, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.NoStepEntry, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.RampedEntry, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.RampedEntry, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.Doorway32OrWider, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.Doorway32OrWider, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.AccessiblePathInHome, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(x => x.AccessiblePathInHome, "Select An Option", new { @class = "form-control" })
+        </div>
+    </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.AutomaticEntryDoor, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.AutomaticEntryDoor, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+     
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.LeverStyleDoorHandles, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.LeverStyleDoorHandles, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.SingleLevelOrFirstFloow, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.SingleLevelOrFirstFloow, "Select An Option", new { @class = "form-control" })
+            </div>
+        </div>
+        
+    <div class="form-group">
+        @Html.LabelFor(m => m.InsideSteps, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.InsideSteps, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.OutsideSteps, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OutsideSteps, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+    <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

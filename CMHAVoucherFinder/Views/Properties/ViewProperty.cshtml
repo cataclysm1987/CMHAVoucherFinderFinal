@@ -1,0 +1,276 @@
+﻿@using CMHAVoucherFinder.Models
+@model CMHAVoucherFinder.Models.Property
+
+@{
+    ViewBag.Title = "View Property";
+    
+}
+
+<h1>@Model.PropertyName</h1>
+
+<div>
+    <h3>@(Model.StreetAddress + " " + Model.City + ", " + Model.State + " " + Model.ZipCode)</h3>
+    <hr />
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:800px;height:456px;overflow:hidden;visibility:hidden;background-color:#24262e;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('../../img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:800px;height:356px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="../../img/01.jpg" />
+                <img data-u="thumb" src="../../img/thumb-01.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/02.jpg" />
+                <img data-u="thumb" src="../../img/thumb-02.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/03.jpg" />
+                <img data-u="thumb" src="../../img/thumb-03.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/04.jpg" />
+                <img data-u="thumb" src="../../img/thumb-04.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/05.jpg" />
+                <img data-u="thumb" src="../../img/thumb-05.jpg" />
+            </div>
+            <a data-u="any" href="" style="display:none">Image Gallery</a>
+            <div>
+                <img data-u="image" src="../../img/06.jpg" />
+                <img data-u="thumb" src="../../img/thumb-06.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/07.jpg" />
+                <img data-u="thumb" src="../../img/thumb-07.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/08.jpg" />
+                <img data-u="thumb" src="../../img/thumb-08.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/09.jpg" />
+                <img data-u="thumb" src="../../img/thumb-09.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/10.jpg" />
+                <img data-u="thumb" src="../../img/thumb-10.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/11.jpg" />
+                <img data-u="thumb" src="../../img/thumb-11.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="../../img/12.jpg" />
+                <img data-u="thumb" src="../../img/thumb-12.jpg" />
+            </div>
+        </div>
+        <!-- Thumbnail Navigator -->
+        <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
+            <!-- Thumbnail Item Skin Begin -->
+            <div data-u="slides" style="cursor: default;">
+                <div data-u="prototype" class="p">
+                    <div class="w">
+                        <div data-u="thumbnailtemplate" class="t"></div>
+                    </div>
+                    <div class="c"></div>
+                </div>
+            </div>
+            <!-- Thumbnail Item Skin End -->
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
+        <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+    <!-- #endregion Jssor Slider End -->
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PropertyDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyType)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="indoor-values" col-md-12 col-sm-12">
+    <h2 class="detail-header">Indoor Details</h2>
+    <div class="col-md-6 col-sm-12 detils-divider">
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.CeilingFans)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.CeilingFans)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.Furnished)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.Furnished)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.Fireplace)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.Fireplace)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.HeatStyle)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.HeatStyle)</p><br />
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.DishWasher)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.DishWasher)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.Stove)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.Stove)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.GarbageDisposal)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.GarbageDisposal)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.Refrigerator)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.Refrigerator)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.Microwave)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.Microwave)</p><br />
+    </div>
+</div>
+
+
+
+<div class="outdoor-values col-md-12 col-sm-12">
+    <h2 class="detail-header">Outdoor and Miscellaneous Details</h2>
+    <div class="col-md-6 col-sm-12 detils-divider">
+
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.SwimmingPool)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.SwimmingPool)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.GatedCommunity)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.GatedCommunity)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.LawnCareIncluded)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.LawnCareIncluded)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.ParkingType)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.ParkingType)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.FencedYard)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.FencedYard)</p><br />
+
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.PatioPorch)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.PatioPorch)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.IsSmokingAllowed)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.IsSmokingAllowed)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.LotSize)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.LotSize)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.PestControl)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.PestControl)</p><br />
+    </div>
+</div>
+
+
+
+
+<div class="who-pays-what col-md-12 col-sm-12">
+    <h2 class="detail-header">Who Pays What?</h2>
+    <div class="col-md-6 col-sm-12 detils-divider">
+
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.TenantPaysElectric)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.TenantPaysElectric)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.ElectricStatus)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.ElectricStatus)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.TenantPaysWater)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.TenantPaysWater)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.WaterStatus)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.WaterStatus)</p><br />
+
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.TenantPaysSewer)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.TenantPaysSewer)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.SewerStatus)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.SewerStatus)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.TenantPaysHeat)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.TenantPaysHeat)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.HeatStatus)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.HeatStatus)</p><br />
+    </div>
+</div>
+
+
+
+<div class="accessibility-info col-md-12 col-sm-12">
+    <h2 class="detail-header">Accessibility Information</h2>
+    <div class="col-md-6 col-sm-12 detils-divider">
+
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.IsParkingClose)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.IsParkingClose)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.NoStepEntry)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.NoStepEntry)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.RampedEntry)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.RampedEntry)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.Doorway32OrWider)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.Doorway32OrWider)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.AccessiblePathInHome)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.AccessiblePathInHome)</p><br />
+
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.AutomaticEntryDoor)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.AutomaticEntryDoor)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.LeverStyleDoorHandles)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.LeverStyleDoorHandles)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.SingleLevelOrFirstFloow)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.SingleLevelOrFirstFloow)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.InsideSteps)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.InsideSteps)</p><br />
+        <p class="details-p" style="font-weight: bold">@Html.DisplayNameFor(model => model.OutsideSteps)</p><br />
+        <p class="details-p">@Html.DisplayFor(model => model.OutsideSteps)</p><br />
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Add to Favorites", "AddToFavorites", new { id = Model.PropertyId }) |
+    @Html.ActionLink("Back to Browse", "Browse")
+</p>

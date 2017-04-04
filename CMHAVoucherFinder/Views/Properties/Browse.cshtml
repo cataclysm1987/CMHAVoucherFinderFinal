@@ -1,0 +1,107 @@
+﻿@model PagedList.IPagedList<CMHAVoucherFinder.Models.Property>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Browse Properties";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("BrowseBy", "Properties"))
+{
+    <div class="search-form">
+        <label>Enter Zip Code</label>
+        <input type="text" id="zipcode" name="zipcode" value="Zip Code" style="display: inline;" onfocus="if(this.value == 'Zip Code') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Zip Code'; }"/>
+        <select name="maxdistance" id="maxdistance" style="display: inline;">
+            <option value="10">Within 10 miles</option>
+            <option value="20">Within 20 miles</option>
+            <option value="50">Within 50 miles</option>
+            <option value="75">Within 75 miles</option>
+            <option value="100">Within 100 miles</option>
+        </select>
+        <label>Minimum Rent</label>
+        <input type="number" id="minrent" name="minrent" value="0" style="display: inline;" min="0"/>
+        <label>Maximum Rent</label>
+        <input type="number" id="maxrent" name="maxrent" value="1000" style="display: inline;" min="0"/>
+        <select name="propertytype" id="propertytype" style="display: inline;">
+            <option value="Any Type"></option>
+            <option value="House">House</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Duplex">Duplex</option>
+        </select>
+        <label>Is Property Accessible?</label>
+        <select name="accessible" id="accessible">
+            <option value=""></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <input type=submit class="btn btn-lg" style="display: inline;"/>
+    </div>
+}
+
+    <table class="table">
+        <tr>
+            <th>
+                Property Name
+            </th>
+            <th>
+                Street Address
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+               Zip Code
+            </th>
+            <th>
+                Date Available
+            </th>
+            <th>
+                Monthly Rent
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PropertyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAvailable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("View Property", "ViewProperty", new { id = item.PropertyId }) |
+                    @Html.ActionLink("Add To Favorites", "AddToFavorites", new { id = item.PropertyId })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Browse",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
