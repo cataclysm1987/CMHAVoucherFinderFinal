@@ -3,29 +3,39 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Voucher Housing Finder</h1>
+    <p class="lead">Quickly Find and Search Properties That Are Voucher Friendly.</p>
+    <p class="lead">Find Nearby Schools, Crime Rates and </p>
+    @using (Html.BeginForm("BrowseBy", "Properties"))
+    {
+        <input type="submit" value="Search Properties" class="btn btn-lg btn-primary" />
+        <input type="text" id="zipcode" name="zipcode" value="Zip Code" style="display: inline;" onfocus="if(this.value == 'Zip Code') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Zip Code'; }" />
+        <input type ="hidden" value="50" name="maxdistance"/>
+        <input type="hidden" value="0" name="minrent"/>
+        <input type="hidden" value="1000" name="maxrent"/>
+    }
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Why Voucher Housing Finder?</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Our website does more than just provide you with a list of voucher friendly properties. We also take the time
+            to help you research the area, find nearby schools, churches, community centers and more.
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <h2>Know Where You're Moving</h2>
+        <p>Concerned about crime? Interested in being close to clinics or community centers? Our website helps you do the research
+        quickly and effectively. Don't move into a voucher friendly property before checking it out here!
+        </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <h2>Don't Regret Your Move!</h2>
+        <p>Every year, voucher recipients make a move they regret due to crime, noise pollution, bad schools or a variety
+        of other common concerns. We help you avoid this by giving you the scoop on your property fast!</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>

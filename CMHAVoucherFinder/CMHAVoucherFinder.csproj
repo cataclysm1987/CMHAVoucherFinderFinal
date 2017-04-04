@@ -240,6 +240,7 @@
     <Compile Include="Models\FavoriteProperty.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PagedListSearchModel.cs" />
     <Compile Include="Models\PropertyImage.cs" />
     <Compile Include="Models\Property.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
@@ -247,7 +248,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-lumen.css" />
+    <Content Include="Content\bootstrap-united.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="images\apartments.jpg" />
     <Content Include="Scripts\Demo.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -334,7 +338,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
     <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
