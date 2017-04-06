@@ -8,6 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE0BwiPhc62BsK7HIMNjP60ooYkxbNaOI&callback=initMap"
             async defer></script>
+    @Scripts.Render("~/bundles/jquery")
 
 </head>
 <body>
@@ -41,7 +42,7 @@
         </div>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

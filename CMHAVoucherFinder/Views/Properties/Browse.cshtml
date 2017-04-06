@@ -5,12 +5,35 @@
     ViewBag.Title = "Browse Properties";
 }
 
+@if (ViewData["isaccessible"] != null)
+{
+    <script>
+        $(document).ready(function() {
+            document.getElementById("accessible").value = @ViewData["isaccessible"];
+        });
+    </script>
+}
+
+@if (ViewData["propertytype"] != null)
+{
+    <script>
+        $(document).ready(function() {
+            document.getElementById("propertytype").value = @ViewData["propertytype"];
+        });
+    </script>
+}
 <script>
-  
-
-
-
-
+    $(document).ready(function() {
+        if (@ViewData["zipcode"] != null) {
+            document.getElementById("zipcode").value = @ViewData["zipcode"];
+        }
+        if (@ViewData["minrent"] != null) {
+            document.getElementById("minrent").value = @ViewData["minrent"];
+        }
+        if (@ViewData["maxrent"] != null) {
+            document.getElementById("maxrent").value = @ViewData["maxrent"];
+        }
+    });
 </script>
 
 <h2>@ViewBag.Title</h2>
@@ -20,7 +43,7 @@
 {
     <div class="search-form">
         <div class="col-md-2 col-sm-2">
-            <input type=submit class="btn btn-lg btn-primary" style="display: inline; margin: 0 auto;"/>
+            <input type=submit class="btn btn-lg btn-primary" style="display: inline; margin: 0 auto;" onclick="if ( minrent.value == '') { minrent.value = '0'; }"/>
         </div>
         <div class="col-md-10 col-sm-10">
             <div class="search-form-top">
@@ -34,9 +57,9 @@
                     <option value="100">Within 100 miles</option>
                 </select>
                 <label>Minimum Rent</label>
-                <input type="number" id="minrent" name="minrent" value="0" style="display: inline;" min="0" />
+                <input type="number" id="minrent" name="minrent" value="0" style="display: inline;" min="0" onblur="if ( this.value == '') { this.value = '0'; }"/>
                 <label>Maximum Rent</label>
-                <input type="number" id="maxrent" name="maxrent" value="1000" style="display: inline;" min="0" />
+                <input type="number" id="maxrent" name="maxrent" value="1000" style="display: inline;" min="0" onblur="if ( this.value == '') { this.value = '1000'; }"/>
             </div>
             <div class="search-form-bottom">
                 <select name="propertytype" id="propertytype" style="display: inline;">

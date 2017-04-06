@@ -190,6 +190,12 @@ namespace CMHAVoucherFinder
                     break;
             }
 
+            ViewData["zipcode"] = zipcode;
+            ViewData["minrent"] = minrent;
+            ViewData["maxrent"] = maxrent;
+            ViewData["isaccessible"] = accessible;
+            ViewData["propertytype"] = propertytype;
+
             int pageSize = 10;
             int pageNumber = (page ?? 1);
             
