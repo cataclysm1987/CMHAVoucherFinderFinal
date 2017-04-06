@@ -63,7 +63,7 @@
             <th class="hide-mobile">
                 Property Name
             </th>
-            <th>
+            <th class="hide-mobile">
                 Street Address
             </th>
             <th>
@@ -79,6 +79,9 @@
                 Date Available
             </th>
             <th>
+                Beds/Baths
+            </th>
+            <th>
                 Monthly Rent
             </th>
             <th></th>
@@ -90,7 +93,7 @@
                 <td class="hide-mobile">
                     @Html.DisplayFor(modelItem => item.PropertyName)
                 </td>
-                <td>
+                <td class="hide-mobile">
                     @Html.DisplayFor(modelItem => item.StreetAddress)
                 </td>
                 <td>
@@ -104,6 +107,9 @@
                 </td>
                 <td class="hide-mobile">
                     @Html.DisplayFor(modelItem => item.DateAvailable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beds) / @Html.DisplayFor(modelItem => item.Baths)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)

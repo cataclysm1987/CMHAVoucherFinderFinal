@@ -90,7 +90,7 @@ namespace CMHAVoucherFinder
                 
                 return RedirectToAction("Index", "Home");
             }
-            if (zipint > 99999)
+            if (zipint > 99999 || zipint < 10000)
             {
                 TempData["shortMessage"] = "Invalid Zip Code Entered. Please Try Again.";
                 
