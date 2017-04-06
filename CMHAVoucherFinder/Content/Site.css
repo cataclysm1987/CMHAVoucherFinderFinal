@@ -65,3 +65,40 @@ body > div.container.body-content > div.indoor-values > div.col-md-6.col-sm-12.d
 label, input {
     display: inline;
 }
+
+.top-search-bar {
+    background-color: #e6e6e6;
+}
+
+.search-form {
+    margin-bottom: 10px;
+    background-color: #efefef;
+}
+
+
+.j-text{
+    color: #ffffff;
+}
+
+.apartment-bg {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url("../images/apartments.jpg");
+    background-color: #17234E;
+    margin-bottom: 0;
+    min-height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #000;
+}
+
+/*Media Queries*/
+
+@media only screen and (max-width: 500px) {
+    .hide-mobile {
+        display: none;
+    }
+}

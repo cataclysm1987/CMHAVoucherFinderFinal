@@ -10,6 +10,10 @@ namespace CMHAVoucherFinder.Controllers
     {
         public ActionResult Index()
         {
+            if (TempData["shortMessage"] != null)
+            {
+                ViewBag.Message = TempData["shortMessage"];
+            }
             return View();
         }
 

@@ -19,39 +19,48 @@
 @using (Html.BeginForm("BrowseBy", "Properties"))
 {
     <div class="search-form">
-        <label>Enter Zip Code</label>
-        <input type="text" id="zipcode" name="zipcode" value="Zip Code" style="display: inline;" onfocus="if(this.value == 'Zip Code') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Zip Code'; }"/>
-        <select name="maxdistance" id="maxdistance" style="display: inline;">
-            <option value="10">Within 10 miles</option>
-            <option value="20">Within 20 miles</option>
-            <option value="50">Within 50 miles</option>
-            <option value="75">Within 75 miles</option>
-            <option value="100">Within 100 miles</option>
-        </select>
-        <label>Minimum Rent</label>
-        <input type="number" id="minrent" name="minrent" value="0" style="display: inline;" min="0"/>
-        <label>Maximum Rent</label>
-        <input type="number" id="maxrent" name="maxrent" value="1000" style="display: inline;" min="0"/>
-        <select name="propertytype" id="propertytype" style="display: inline;">
-            <option value="Any Type"></option>
-            <option value="House">House</option>
-            <option value="Apartment">Apartment</option>
-            <option value="Townhouse">Townhouse</option>
-            <option value="Duplex">Duplex</option>
-        </select>
-        <label>Is Property Accessible?</label>
-        <select name="accessible" id="accessible">
-            <option value=""></option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
-        <input type=submit class="btn btn-lg" style="display: inline;"/>
+        <div class="col-md-2 col-sm-2">
+            <input type=submit class="btn btn-lg btn-primary" style="display: inline; margin: 0 auto;"/>
+        </div>
+        <div class="col-md-10 col-sm-10">
+            <div class="search-form-top">
+                <label>Enter Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" value="Zip Code" style="display: inline;" onfocus="if (this.value == 'Zip Code') { this.value = ''; }" onblur="if (this.value == '') { this.value = 'Zip Code'; }" />
+                <select name="maxdistance" id="maxdistance" style="display: inline;">
+                    <option value="10">Within 10 miles</option>
+                    <option value="20">Within 20 miles</option>
+                    <option value="50">Within 50 miles</option>
+                    <option value="75">Within 75 miles</option>
+                    <option value="100">Within 100 miles</option>
+                </select>
+                <label>Minimum Rent</label>
+                <input type="number" id="minrent" name="minrent" value="0" style="display: inline;" min="0" />
+                <label>Maximum Rent</label>
+                <input type="number" id="maxrent" name="maxrent" value="1000" style="display: inline;" min="0" />
+            </div>
+            <div class="search-form-bottom">
+                <select name="propertytype" id="propertytype" style="display: inline;">
+                    <option value="Any Type"></option>
+                    <option value="House">House</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Townhouse">Townhouse</option>
+                    <option value="Duplex">Duplex</option>
+                </select>
+                <label>Is Property Accessible?</label>
+                <select name="accessible" id="accessible">
+                    <option value=""></option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+            </div>
+        </div>
     </div>
 }
 
     <table class="table">
-        <tr>
-            <th>
+        <tr class="top-search-bar">
+            <th class="hide-mobile">
                 Property Name
             </th>
             <th>
@@ -60,13 +69,13 @@
             <th>
                 City
             </th>
-            <th>
+            <th class="hide-mobile">
                 State
             </th>
-            <th>
+            <th class="hide-mobile">
                Zip Code
             </th>
-            <th>
+            <th class="hide-mobile">
                 Date Available
             </th>
             <th>
@@ -78,7 +87,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="hide-mobile">
                     @Html.DisplayFor(modelItem => item.PropertyName)
                 </td>
                 <td>
@@ -87,13 +96,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.City)
                 </td>
-                <td>
+                <td class="hide-mobile">
                     @Html.DisplayFor(modelItem => item.State)
                 </td>
-                <td>
+                <td class="hide-mobile">
                     @Html.DisplayFor(modelItem => item.ZipCode)
                 </td>
-                <td>
+                <td class="hide-mobile">
                     @Html.DisplayFor(modelItem => item.DateAvailable)
                 </td>
                 <td>

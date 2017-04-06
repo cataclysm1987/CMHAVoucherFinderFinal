@@ -2,40 +2,57 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Voucher Housing Finder</h1>
-    <p class="lead">Quickly Find and Search Properties That Are Voucher Friendly.</p>
-    <p class="lead">Find Nearby Schools, Crime Rates and </p>
-    @using (Html.BeginForm("BrowseBy", "Properties"))
-    {
-        <input type="submit" value="Search Properties" class="btn btn-lg btn-primary" />
-        <input type="text" id="zipcode" name="zipcode" value="Zip Code" style="display: inline;" onfocus="if(this.value == 'Zip Code') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Zip Code'; }" />
-        <input type ="hidden" value="50" name="maxdistance"/>
-        <input type="hidden" value="0" name="minrent"/>
-        <input type="hidden" value="1000" name="maxrent"/>
-    }
 </div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Why Voucher Housing Finder?</h2>
-        <p>
-            Our website does more than just provide you with a list of voucher friendly properties. We also take the time
-            to help you research the area, find nearby schools, churches, community centers and more.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div class="jumbotron container-fluid apartment-bg">
+    <div class="container jumbotron-container">
+        <h1 class="j-text" style="color: #ffffff;">Voucher Housing Finder</h1>
+        <p class="lead j-text" style="font-weight: bold;">Quickly Find and Search Properties That Are Voucher Friendly.</p>
+        <p class="lead j-text" style="font-weight: bold;">Find Nearby Schools, Crime Rates and Clinics</p>
+        @using (Html.BeginForm("BrowseBy", "Properties"))
+        {
+            <input type="submit" value="Search Properties" class="btn btn-lg btn-primary" style="margin-right: 10px; font-size: 16px;"/>
+            <input type="text" style="line-height: 30px; font-size: 16px;" id="zipcode" name="zipcode" value="Enter Zip Code" style="display: inline;" onfocus="if (this.value == 'Enter Zip Code') { this.value = ''; }" onblur="if (this.value == '') { this.value = 'Enter Zip Code'; }" />
+            <input type="hidden" value="50" name="maxdistance" />
+            <input type="hidden" value="0" name="minrent" />
+            <input type="hidden" value="1000" name="maxrent" />
+        }
+        @if (ViewBag.Message != null)
+        {
+            <p class="warning j-text" style="font-weight: bold; margin-top: 15px;">@ViewBag.Message</p>
+        }
     </div>
-    <div class="col-md-4">
-        <h2>Know Where You're Moving</h2>
-        <p>Concerned about crime? Interested in being close to clinics or community centers? Our website helps you do the research
-        quickly and effectively. Don't move into a voucher friendly property before checking it out here!
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Don't Regret Your Move!</h2>
-        <p>Every year, voucher recipients make a move they regret due to crime, noise pollution, bad schools or a variety
-        of other common concerns. We help you avoid this by giving you the scoop on your property fast!</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Why Search Here?</h2>
+            <p>
+                Our website does more than just provide you with a list of voucher friendly properties. We also take the time
+                to help you research the area, find nearby schools, churches, community centers and more.
+            </p>
+            <p>
+                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Know Where You're Moving</h2>
+            <p>
+                Concerned about crime? Interested in being close to clinics or community centers? Our website helps you do the research
+                quickly and effectively. Don't move into a voucher friendly property before checking it out here!
+            </p>
+            <p>
+                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Don't Regret Your Move!</h2>
+            <p>
+                Every year, voucher recipients make a move they regret due to crime, noise pollution, bad schools or a variety
+                of other common concerns. We help you avoid this by giving you the scoop on your property fast!
+            </p>
+            <p>
+                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a>
+            </p>
+        </div>
     </div>
 </div>

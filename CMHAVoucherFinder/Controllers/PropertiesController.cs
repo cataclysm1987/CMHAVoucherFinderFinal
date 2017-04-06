@@ -60,7 +60,7 @@ namespace CMHAVoucherFinder
             {
                 return View(await db.Properties.Where(u => u.UserId == userId).ToListAsync());
             }
-            return View("Browse", await db.Properties.ToListAsync());
+            return View("Browse", db.Properties.ToPagedList(1, 10));
         }
 
 
@@ -85,9 +85,19 @@ namespace CMHAVoucherFinder
 
             int zipint;
             if (!int.TryParse(zipcode, out zipint))
-                return View("Browse", await db.Properties.ToListAsync());
+            {
+                TempData["shortMessage"] = "Invalid Zip Code Entered. Please Try Again.";
+                
+                return RedirectToAction("Index", "Home");
+            }
             if (zipint > 99999)
-                return View("Browse", await db.Properties.ToListAsync());
+            {
+                TempData["shortMessage"] = "Invalid Zip Code Entered. Please Try Again.";
+                
+                return RedirectToAction("Index", "Home");
+            }
+                
+
             var requestUri = string.Format("http://maps.googleapis.com/maps/api/geocode/xml?address={0}&sensor=false",
                 Uri.EscapeDataString(zipcode));
 
@@ -215,7 +225,7 @@ namespace CMHAVoucherFinder
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == userId);
             if (currentUser.UserType == UserTypes.Landlord)
                 return View();
-            return View("Browse", db.Properties.ToList());
+            return View("Browse", db.Properties.ToPagedList(1, 10));
         }
 
         // POST: Properties/Create
