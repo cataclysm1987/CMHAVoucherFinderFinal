@@ -22,19 +22,33 @@
         });
     </script>
 }
-<script>
-    $(document).ready(function() {
-        if (@ViewData["zipcode"] != null) {
+
+@if (ViewData["zipcode"] != null)
+{
+    <script>
+        $(document).ready(function() {
             document.getElementById("zipcode").value = @ViewData["zipcode"];
-        }
-        if (@ViewData["minrent"] != null) {
+        });
+    </script>
+}
+
+@if (ViewData["minrent"] != null)
+{
+    <script>
+        $(document).ready(function() {
             document.getElementById("minrent").value = @ViewData["minrent"];
-        }
-        if (@ViewData["maxrent"] != null) {
+        });
+    </script>
+}
+
+@if (ViewData["maxrent"] != null)
+{
+    <script>
+        $(document).ready(function() {
             document.getElementById("maxrent").value = @ViewData["maxrent"];
-        }
-    });
-</script>
+        });
+    </script>
+}
 
 <h2>@ViewBag.Title</h2>
 

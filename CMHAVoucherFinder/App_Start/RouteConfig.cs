@@ -16,6 +16,12 @@ namespace CMHAVoucherFinder
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "About",
+                "About",
+                new {controller = "Home", action = "About"}
+            );
+
+            routes.MapRoute(
                 "My Properties",                             
                 "MyProperties",                            
                 new { controller = "Properties", action = "Index" }  

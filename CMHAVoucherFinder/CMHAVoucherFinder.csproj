@@ -251,6 +251,7 @@
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-united.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="images\apartment2.jpg" />
     <Content Include="images\apartments.jpg" />
     <Content Include="Scripts\Demo.js" />
     <Content Include="Content\bootstrap.css" />
@@ -338,7 +339,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
