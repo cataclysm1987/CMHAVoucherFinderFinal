@@ -71,6 +71,8 @@ label, input {
 }
 
 .search-form {
+    min-height: 100px;
+    width: 100%;
     margin-bottom: 10px;
     background-color: #efefef;
 }
@@ -110,10 +112,38 @@ label, input {
     color: #000;
 }
 
+
+    .search-form-mobile {
+        display: none;
+    }
 /*Media Queries*/
 
 @media only screen and (max-width: 500px) {
     .hide-mobile {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .search-form {
+        display: none;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    search-form-mobile-toggle {
+        display: inline;
+        float: left;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+    .search-form-mobile-toggle {
         display: none;
     }
 }

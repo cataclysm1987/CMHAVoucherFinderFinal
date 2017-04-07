@@ -250,6 +250,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-united.css" />
+    <Content Include="Content\font-awesome.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="images\apartment2.jpg" />
     <Content Include="images\apartments.jpg" />

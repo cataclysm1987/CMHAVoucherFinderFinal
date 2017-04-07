@@ -24,6 +24,7 @@ namespace CMHAVoucherFinder
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/font-awesome.css",
                       "~/Content/bootstrap-lumen.css",
                       "~/Content/site.css"));
         }
